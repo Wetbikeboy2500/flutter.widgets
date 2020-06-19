@@ -273,7 +273,7 @@ class _ScrollablePositionedListState extends State<ScrollablePositionedList>
           backTarget = 0;
         });
       } else {
-        if (frontTarget > widget.itemCount - 1) {
+        /*if (frontTarget > widget.itemCount - 1) {
           setState(() {
             frontTarget = widget.itemCount - 1;
           });
@@ -282,7 +282,7 @@ class _ScrollablePositionedListState extends State<ScrollablePositionedList>
           setState(() {
             backTarget = widget.itemCount - 1;
           });
-        }
+        }*/
       }
     }
   }
@@ -371,13 +371,13 @@ class _ScrollablePositionedListState extends State<ScrollablePositionedList>
       index = widget.itemCount - 1;
     }
     if (_showFrontList) {
-      //frontScrollController.jumpTo(0);
+      frontScrollController.jumpTo(0);
       setState(() {
         frontTarget = index;
         frontAlignment = alignment;
       });
     } else {
-      //backScrollController.jumpTo(0);
+      backScrollController.jumpTo(0);
       setState(() {
         backTarget = index;
         backAlignment = alignment;
